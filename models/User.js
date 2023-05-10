@@ -1,5 +1,4 @@
 const { Schema, model } = require('mongoose');
-const Thought = require('./Thought')
 
 const userSchema = new Schema(
     {
@@ -8,7 +7,7 @@ const userSchema = new Schema(
             required: true,
             trim: true
         },
-        LastName: {
+        lastName: {
             type: String,
             required: true,
             trim: true

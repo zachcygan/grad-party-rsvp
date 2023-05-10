@@ -1,8 +1,9 @@
 const express = require('express');
-const routes = require('./routes');
+const routes = require('./controllers');
 const path = require('path');
 const db = require('./config/connection');
 const exphbs = require('express-handlebars');
+const helpers = require('./util/helpers');
 
 const app = express();
 

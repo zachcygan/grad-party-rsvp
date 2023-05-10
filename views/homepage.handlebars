@@ -1,5 +1,6 @@
+<div id="message"></div>
 <div class="max-w-md mx-auto my-8">
-  <h1 class="text-3xl font-bold mb-4">Graduation Party RSVP</h1>
+  <h1 class="text-3xl font-bold mb-4 text-center text-white">Join Us for a Graduation Celebration for Zach Cygan!</h1>
   <form action="/rsvp" method="POST" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <div class="mb-4">
       <label class="block text-gray-700 font-bold mb-2" for="firstName">First Name</label>
@@ -14,9 +15,35 @@
       <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" name="email" type="email" placeholder="Enter your email address">
     </div>
     <div class="flex items-center justify-between">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+      <button id="rsvpButton" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
         RSVP
       </button>
     </div>
   </form>
 </div>
+
+<style>
+  body {
+    background-color: #f9f1e8;
+  }
+  
+  form {
+    background-color: #fff8f2;
+  }
+  
+  h1 {
+    background-color: #2d4059;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  label {
+    color: #2d4059;
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: #e85a4f;
+  }
+</style>
