@@ -18,11 +18,11 @@ router.post('/', async (req, res) => {
         let mailOptions = {
             from: process.env.EMAIL,
             to: process.env.EMAIL,
-            subject: 'New RSVP for Zach\'s Graduation!',
-            text: `New RSVP from ${req.body.firstName} ${req.body.lastName} for Zach's Graduation!
+            subject: '🎊New RSVP for Zach\'s Graduation!🎊',
+            text: `${req.body.firstName} ${req.body.lastName} just RSVP'ed for Zach's Graduation!
             \n
             \n
-            They can be reached at ${req.body.email}`
+                   They can be reached at ${req.body.email}`
         }
 
         transporter.sendMail(mailOptions, function(err, data) {
@@ -32,8 +32,8 @@ router.post('/', async (req, res) => {
                 console.log('Email sent!!!');
             }
         })
-        window.location.href = '/'
-        res.json(user)
+
+        res.redirect('/success')
     } catch (err) {
         console.log(err);
         return res.status(500).json(err);

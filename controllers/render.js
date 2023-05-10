@@ -8,4 +8,13 @@ router.get('/', (req, res) => {
    }
 })
 
+router.get('/success', (req, res) => {
+  try {
+    res.render('success')
+  } catch (err) {
+    res.status(500).json(err)
+  }
+})
+
+
 module.exports = router;
