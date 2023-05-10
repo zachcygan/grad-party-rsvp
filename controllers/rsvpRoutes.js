@@ -13,8 +13,6 @@ let transporter = nodemailer.createTransport({
 
 router.post('/', async (req, res) => {
     try {
-
-        
         const user = await User.create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
