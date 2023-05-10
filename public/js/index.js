@@ -53,4 +53,24 @@ closeButton.addEventListener('click', (event) => {
   localStorage.removeItem('alertShown');
 });
 
+if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  // Dark mode is enabled
+  // Add a class to the body tag to apply dark mode styles
+  document.body.classList.add('dark-mode');
+} else {
+  // Dark mode is not enabled
+  // Remove the dark mode class from the body tag
+  document.body.classList.remove('dark-mode');
+}
+
+function toggleDarkMode() {
+  const toggleSwitch = document.getElementById('toggle-dark-mode');
+  if (toggleSwitch.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+}
+
+
 
