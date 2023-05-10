@@ -13,11 +13,18 @@ let transporter = nodemailer.createTransport({
 
 router.post('/', async (req, res) => {
     try {
-        const user = await User.create(req.body);
+
+        
+        const user = await User.create({
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            partySize: req.body.partySize // updated variable name
+        });
 
         let mailOptions = {
             from: process.env.EMAIL,
-            to: process.env.PEMAIL,
+            to: process.env.EMAIL,
             subject: '🎊New RSVP for Zach\'s Graduation!🎊',
             text: 
             `${req.body.firstName} ${req.body.lastName} just RSVP'ed for Zach's Graduation!

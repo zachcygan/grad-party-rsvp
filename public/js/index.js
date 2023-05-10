@@ -6,9 +6,9 @@ form.addEventListener('submit', (event) => {
   const firstName = document.querySelector('#firstName').value;
   const lastName = document.querySelector('#lastName').value;
   const email = document.querySelector('#email').value;
-  const guest = document.querySelector('#guests').value;
+  const pSize = document.querySelector('#guests').value;
 
-  if (!firstName || !lastName || !email || !guest ) {
+  if (!firstName || !lastName || !email || !pSize ) {
     alert('Please fill in all fields!');
     return;
   }
