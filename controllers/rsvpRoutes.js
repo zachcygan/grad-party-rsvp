@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
             \n
             \n
             They can be reached at ${req.body.email}
-            They will be bringing ${req.body.guests} guests.`
+            Their party size is ${req.body.partySize}`
         }
 
         transporter.sendMail(mailOptions, function(err, data) {

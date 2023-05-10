@@ -21,10 +21,10 @@ const userSchema = new Schema(
                 'Please enter a valid email address',
             ]
         },
-        guests: {
+        partySize: {
             type: Number,
             required: true,
-            default: 0
+            default: 1
         } 
 
     },
