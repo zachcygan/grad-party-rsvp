@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
 
         let mailOptions = {
             from: process.env.EMAIL,
-            to: process.env.EMAIL,
+            to: process.env.PEMAIL,
             subject: '🎊New RSVP for Zach\'s Graduation!🎊',
             text: `${req.body.firstName} ${req.body.lastName} just RSVP'ed for Zach's Graduation!
             \n
