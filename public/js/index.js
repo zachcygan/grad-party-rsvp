@@ -6,8 +6,9 @@ form.addEventListener('submit', (event) => {
   const firstName = document.querySelector('#firstName').value;
   const lastName = document.querySelector('#lastName').value;
   const email = document.querySelector('#email').value;
+  const guest = document.querySelector('#guests').value;
 
-  if (!firstName || !lastName || !email) {
+  if (!firstName || !lastName || !email || !guest ) {
     alert('Please fill in all fields!');
     return;
   }
@@ -15,62 +16,6 @@ form.addEventListener('submit', (event) => {
   // if all inputs are filled, submit the form
   form.submit();
 });
-
-const urlParams = new URLSearchParams(window.location.search);
-const success = location.href.split('/')
-const successAlert = success[success.length - 1];
-const alertDiv = document.createElement('div');
-
-if (successAlert && !localStorage.getItem('alertShown')) {
-  console.log('success')
-  alertDiv.classList.add('bg-green-100', 'border', 'border-green-400', 'text-green-700', 'px-4', 'py-3', 'rounded', 'relative', 'mb-4');
-  alertDiv.setAttribute('role', 'alert'); 
-  alert.innerHTML = `
-    <strong class="font-bold">Success!</strong>
-    <span class="block sm:inline">Your RSVP has been submitted.</span>
-    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
-      <svg class="fill-current h-6 w-6 text-green-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-        <title>Close</title>
-        <path d="M14.348 5.652a.5.5 0 00-.707 0L10 9.293 6.357 5.652a.5.5 0 00-.707.707L9.293 10l-3.643 3.643a.5.5 0 00.707.707L10 10.707l3.643 3.643a.5.5 0 00.707-.707L10.707 10l3.641-3.648a.5.5 0 000-.707z" clip-rule="evenodd" fill-rule="evenodd"></path>
-      </svg>
-    </span>
-  `;
-
-  const formContainer = document.querySelector('#container');
-  formContainer.insertBefore(alertDiv, formContainer.firstChild);
-
-  localStorage.setItem('alertShown', true);
-} else {
-  alert.style.display = 'none';
-}
-
-const closeButton = alert.querySelector('svg');
-
-closeButton.addEventListener('click', (event) => {
-  event.preventDefault();
-
-  alert.remove();
-  localStorage.removeItem('alertShown');
-});
-
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  // Dark mode is enabled
-  // Add a class to the body tag to apply dark mode styles
-  document.body.classList.add('dark-mode');
-} else {
-  // Dark mode is not enabled
-  // Remove the dark mode class from the body tag
-  document.body.classList.remove('dark-mode');
-}
-
-function toggleDarkMode() {
-  const toggleSwitch = document.getElementById('toggle-dark-mode');
-  if (toggleSwitch.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
-}
 
 
 

@@ -19,10 +19,12 @@ router.post('/', async (req, res) => {
             from: process.env.EMAIL,
             to: process.env.PEMAIL,
             subject: '🎊New RSVP for Zach\'s Graduation!🎊',
-            text: `${req.body.firstName} ${req.body.lastName} just RSVP'ed for Zach's Graduation!
+            text: 
+            `${req.body.firstName} ${req.body.lastName} just RSVP'ed for Zach's Graduation!
             \n
             \n
-                   They can be reached at ${req.body.email}`
+            They can be reached at ${req.body.email}
+            They will be bringing ${req.body.guests} guests.`
         }
 
         transporter.sendMail(mailOptions, function(err, data) {

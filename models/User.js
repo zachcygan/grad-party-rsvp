@@ -21,6 +21,11 @@ const userSchema = new Schema(
                 'Please enter a valid email address',
             ]
         },
+        guests: {
+            type: Number,
+            required: true,
+            default: 0
+        } 
 
     },
     {
