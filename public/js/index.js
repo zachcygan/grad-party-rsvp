@@ -19,12 +19,12 @@ form.addEventListener('submit', (event) => {
 const urlParams = new URLSearchParams(window.location.search);
 const success = location.href.split('/')
 const successAlert = success[success.length - 1];
-const alert = document.createElement('div');
+const alertDiv = document.createElement('div');
 
 if (successAlert && !localStorage.getItem('alertShown')) {
   console.log('success')
-  alert.classList.add('bg-green-100', 'border', 'border-green-400', 'text-green-700', 'px-4', 'py-3', 'rounded', 'relative', 'mb-4');
-  alert.setAttribute('role', 'alert');
+  alertDiv.classList.add('bg-green-100', 'border', 'border-green-400', 'text-green-700', 'px-4', 'py-3', 'rounded', 'relative', 'mb-4');
+  alertDiv.setAttribute('role', 'alert'); 
   alert.innerHTML = `
     <strong class="font-bold">Success!</strong>
     <span class="block sm:inline">Your RSVP has been submitted.</span>
@@ -37,7 +37,7 @@ if (successAlert && !localStorage.getItem('alertShown')) {
   `;
 
   const formContainer = document.querySelector('#container');
-  formContainer.insertBefore(alert, formContainer.firstChild);
+  formContainer.insertBefore(alertDiv, formContainer.firstChild);
 
   localStorage.setItem('alertShown', true);
 } else {
