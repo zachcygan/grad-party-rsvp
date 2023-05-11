@@ -26,6 +26,10 @@ const userSchema = new Schema(
             required: true,
             default: 1
         },
+        attendance: {
+            type: Boolean,
+            required: true,
+        }
 
     },
     {

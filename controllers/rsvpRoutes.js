@@ -17,17 +17,19 @@ router.post('/', async (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            partySize: req.body.partySize // updated variable name
+            partySize: req.body.partySize,
+            attendance: req.body.attendance // updated variable name
         });
 
         let mailOptions = {
             from: process.env.EMAIL,
-            to: process.env.PEMAIL,
+            to: process.env.EMAIL,
             subject: '🎊New RSVP for Zach\'s Graduation!🎊',
             text: 
             `${req.body.firstName} ${req.body.lastName} just RSVP'ed for Zach's Graduation!
             \n
             \n
+            ATTENDANCE: ${req.body.attendance ? 'YES' : 'NO'}
             They can be reached at ${req.body.email}
             Their party size is ${req.body.partySize}`
         }
